@@ -13,6 +13,7 @@ const initialState = {
   token: localStorage.getItem("token") || null,
   confirmationRequired: false,
   confirmationEmail: null,
+  profile: null,
   error: null,
   loading: false,
 };
@@ -41,6 +42,7 @@ export const login = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       console.log("Sending login request with:", credentials);
+
       const response = await authApi.login(credentials);
       const token = response.data.token;
       const confirmMessage = response.data.message;
@@ -59,7 +61,7 @@ export const login = createAsyncThunk(
           user: {
             id: decodedToken.id,
             role: decodedToken.role,
-            email: credentials.email,
+            phoneNumber: credentials.phoneNumber,
           },
         };
       } catch (decodeError) {
@@ -106,6 +108,10 @@ const authSlice = createSlice({
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("user", JSON.stringify(action.payload));
     },
+    setUserProfile(state, action) {
+  state.profile = action.payload;
+},
+
     logout(state) {
       state.isLoggedIn = false;
       state.user = null;
@@ -174,7 +180,7 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout, clearError, resetConfirmation } = authSlice.actions;
+export const { logout, clearError, resetConfirmation, setUserProfile } = authSlice.actions;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectCurrentUser = (state) => state.auth.user;
 export default authSlice.reducer;
