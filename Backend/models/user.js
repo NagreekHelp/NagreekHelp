@@ -7,9 +7,7 @@ const userSchema = new mongoose.Schema({
     trim: true
   },
   lastName: {
-    type: String,
-    required: true,
-    trim: true
+    type: String
   },
   phoneNumber : {
     type: Number,
@@ -24,7 +22,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['Admin', 'User'], // ✅ allow 'user'
+    enum: ['Admin', 'User'], 
   }
 }, {
   timestamps: true

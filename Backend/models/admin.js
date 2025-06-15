@@ -1,10 +1,3 @@
-// import mongoose from "mongoose";
-// const AdminSchema = new mongoose.Schema({
-//     certificate: {
-//         type: String,
-//         required: true
-//     }
-// })
 import mongoose from 'mongoose';
 
 const admin = new mongoose.Schema({
