@@ -1,10 +1,17 @@
 import React from "react";
-function Home(){
-    return (
-        <>
-        <h3>This is home</h3>
 
-        </>
-    )
+import HeroSection from "./HeroSection";
+import VideoGuide from "./VideoGuide";
+import ServicesSection from "./ServicesSection";
+
+function Home() {
+  return (
+    <div>
+      <HeroSection />
+      <VideoGuide />
+      <ServicesSection />
+    </div>
+  );
 }
+
 export default Home;
