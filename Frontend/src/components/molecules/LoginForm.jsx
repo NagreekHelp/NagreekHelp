@@ -40,7 +40,7 @@ function LoginForm(){
         setToastMessage("LoggedIn successful!");
         setToastType("success");
         setShowToast(true);
-        navigate("/home");
+        navigate("/");
       } else {
         setToastMessage(resultAction.payload || "Log In failed");
         setToastType("error");

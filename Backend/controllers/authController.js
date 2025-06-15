@@ -56,14 +56,38 @@ export const loginUser = async (req, res) => {
   }
 };
 
+// export const getUserProfile = async (req, res) => {
+//   try {
+//     const userId = req.user?.id;
+
+//     const user = await User.findById(userId).select('-password');
+//     if (!user) {
+//       res.status(404).json({ message: 'Profile not found' });
+//       return;
+//     }
+
+//     res.status(200).json({
+//       firstName: user.firstName,
+//       lastName: user.lastName,
+//     });
+//   } catch (error) {
+//     console.error('Error fetching user profile:', error);
+//     res.status(500).json({ message: 'Server error while fetching profile' });
+//   }
+// };
 export const getUserProfile = async (req, res) => {
+  console.log("🧪 Profile route hit");
+  console.log("🔐 Authenticated user:", req.user);
+
   try {
     const userId = req.user?.id;
+    if (!userId) {
+      return res.status(401).json({ message: 'Unauthorized: No user ID' });
+    }
 
     const user = await User.findById(userId).select('-password');
     if (!user) {
-      res.status(404).json({ message: 'Profile not found' });
-      return;
+      return res.status(404).json({ message: 'Profile not found' });
     }
 
     res.status(200).json({
