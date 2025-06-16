@@ -10,9 +10,9 @@ const axiosInstance = axios.create({
 });
 
 // Add authorization header for authenticated requests
-const authHeader = (token) => {
-  return token ? { Authorization: `Bearer ${token}` } : {};
-};
+// const authHeader = (token) => {
+//   return token ? { Authorization: `Bearer ${token}` } : {};
+// };
 
 export const authApi = {
   register: (credentials) => {
@@ -21,11 +21,7 @@ export const authApi = {
   login: (credentials) => {
     return axiosInstance.post('/login', credentials);
   },
-  getUserProfile: ( token) => {
-    return axiosInstance.get('profile',{
-      headers: authHeader(token)
-    }); 
-  },
+
 //   changePassword: (credentials, token) => {
 //     return axiosInstance.put('auth/profile', credentials, {
 //       headers: authHeader(token),

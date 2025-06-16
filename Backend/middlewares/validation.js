@@ -1,14 +1,13 @@
-
-export  const validateRegisterInput = (req, res, next) => {
-  const { firstName, phoneNumber, password } = req.body;
+export const validateRegisterInput = (req, res, next) => {
+  const { firstName, phoneNumber, password, pincode, city } = req.body;
   const errors = [];
 
   if (!firstName || firstName.trim() === '') {
     errors.push({ field: 'firstName', message: 'First name is required' });
   }
 
-  if (!phoneNumber === '') {
-    errors.push({ field: 'phoneNumber', message: 'Phone number is invalid' });
+  if (!phoneNumber || !/^\d{10}$/.test(phoneNumber)) {
+    errors.push({ field: 'phoneNumber', message: 'Phone number must be 10 digits' });
   }
 
   if (!password) {
@@ -17,9 +16,16 @@ export  const validateRegisterInput = (req, res, next) => {
     errors.push({ field: 'password', message: 'Password must be at least 8 characters' });
   }
 
+  if (!pincode || !/^[1-9][0-9]{5}$/.test(pincode)) {
+    errors.push({ field: 'pincode', message: 'Pincode must be a valid 6-digit number' });
+  }
+
+  if (!city || !/^[A-Za-z\s'-]+$/.test(city)) {
+    errors.push({ field: 'city', message: 'City name is invalid' });
+  }
+
   if (errors.length > 0) {
-    res.status(400).json({ errors });
-    return;
+    return res.status(400).json({ errors });
   }
 
   next();

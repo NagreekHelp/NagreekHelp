@@ -102,6 +102,38 @@ function RegisterForm() {
         })}
         error={errors.phoneNumber?.message}
       />
+      <Input
+  label="Pincode"
+  type="text"
+  placeholder="Enter your area pincode"
+  exampleText="e.g. 110001"
+  className="w-full text-form-input p-1"
+  {...register("pincode", {
+    required: "Pincode is required",
+    pattern: {
+      value: /^[1-9][0-9]{5}$/,
+      message: "Enter a valid 6-digit pincode",
+    },
+  })}
+  error={errors.pincode?.message}
+/>
+
+<Input
+  label="Village/City"
+  type="text"
+  placeholder="Enter your village or city"
+  exampleText="e.g. Mumbai"
+  className="w-full text-form-input p-1"
+  {...register("city", {
+    required: "Village/City is required",
+    pattern: {
+      value: /^[A-Za-z\s'-]+$/,
+      message: "Only letters, spaces, apostrophes, or hyphens",
+    },
+  })}
+  error={errors.city?.message}
+/>
+
 
       <PasswordInput
         label="Password"

@@ -6,7 +6,7 @@ import TextWithDescription from './TextWithDescription';
 import ProfileIcon from '../../assets/ProfileIcon';
 import MyAccountIcon from '../../assets/MyAccountIcon';
 
-const ProfileDropdown= ({ name, phoneNumber ,onLogout }) => {
+const ProfileDropdown= ({ name, phoneNumber, city, pincode ,onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -43,19 +43,20 @@ const ProfileDropdown= ({ name, phoneNumber ,onLogout }) => {
             <TextWithDescription 
               title={name}
               description={phoneNumber}
+              
               titleClassName="font-medium text-lg text-gray-800"
             />
           </div>
 
-          {/* <div className=" flex justify-center p-2 border-b border-gray-100">
-            <Link to="/my_account" className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-md" onClick={() => setIsOpen(false)}>
+          <div className=" flex justify-center p-2 border-b border-gray-100">
+            <div className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-md" onClick={() => setIsOpen(false)}>
               <MyAccountIcon />
               <TextWithDescription 
-                title="My Account"
-                description="Edit account profile"
+                title={city}
+                description={pincode}
               />
-            </Link>
-          </div> */}
+            </div>
+          </div>
 
           <div className="p-4">
             <Button 

@@ -7,13 +7,13 @@ const userSchema = new mongoose.Schema({
     trim: true
   },
   lastName: {
-    type: String
+    type: String,
+    trim: true
   },
   phoneNumber : {
     type: Number,
     required: true,
     unique: true,
-    lowercase: true,
     trim: true
   },
   password: {
@@ -23,6 +23,18 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     enum: ['Admin', 'User'], 
+    default: 'User'
+  },
+  pincode: {
+    type: String,
+    required: true,
+    match: /^[1-9][0-9]{5}$/
+  },
+  city: {
+    type: String,
+    required: true,
+    trim: true,
+    match: /^[A-Za-z\s'-]+$/
   }
 }, {
   timestamps: true

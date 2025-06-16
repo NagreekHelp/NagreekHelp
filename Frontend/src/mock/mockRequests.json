@@ -1,0 +1,79 @@
+[
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31001" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1001" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "PAN Card",
+    "description": "Request for PAN reissue",
+    "price": 250,
+    "status": "requested",
+    "submittedDocuments": [],
+    "chat": []
+  },
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31002" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1002" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "Birth Certificate",
+    "description": "Copy of birth certificate",
+    "price": 300,
+    "status": "waiting_for_document",
+    "submittedDocuments": [],
+    "chat": []
+  },
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31003" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1003" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "Caste Certificate",
+    "description": "OBC certificate for student",
+    "price": 150,
+    "status": "waiting_for_completion",
+    "submittedDocuments": ["obc_form.pdf"],
+    "chat": []
+  },
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31004" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1004" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "Income Certificate",
+    "description": "Annual income verification",
+    "price": 200,
+    "status": "waiting_for_payment",
+    "submittedDocuments": ["salary_slips.pdf"],
+    "chat": []
+  },
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31005" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1005" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "Address Proof",
+    "description": "Electricity bill required",
+    "price": 100,
+    "status": "finished",
+    "submittedDocuments": ["ebill.pdf"],
+    "chat": []
+  },
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31006" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1006" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "Domicile Certificate",
+    "description": "Request for residence proof",
+    "price": 180,
+    "status": "cancelled_by_user",
+    "submittedDocuments": [],
+    "chat": []
+  },
+  {
+    "_id": { "$oid": "6650b56aa1c8e3f5e7a31007" },
+    "user": { "$oid": "664f3c93c2d9e3d1f46b1007" },
+    "admin": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "documentName": "Passport Renewal",
+    "description": "Need urgent renewal",
+    "price": 500,
+    "status": "cancelled_by_center",
+    "submittedDocuments": ["passport_old.pdf"],
+    "chat": []
+  }
+]

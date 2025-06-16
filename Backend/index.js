@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import authRouter from './Routes/authRouter.js';
+import requestsRouter from './Routes/requestRoutes.js';
 const app = express();
 app.use(cors({
     origin: 'http://localhost:5173',      // Your frontend origin
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', authRouter);
-
+app.use('/req', requestsRouter);
 app.use((err, req, res, next) => {
     console.error(`[${new Date().toISOString()}] Server Error:`, err.stack);
     res.status(500).send('Something went wrong on the server!');

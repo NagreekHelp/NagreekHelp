@@ -6,18 +6,21 @@ import Admin from '../models/admin.js';
 
 export const registerUser = async (req, res) => {
   try {
-    const { firstName, lastName, phoneNumber, password, role  } = req.body;
+    const { firstName, lastName, phoneNumber,pincode,city, password, role  } = req.body;
     const userExists = await User.findOne({ phoneNumber });
     if (userExists) {
       res.status(400).json({ message: 'User already exists with this phoneNumber.' });
       return;
     }
+    
     const hashedPassword = await hashPassword(password);
     const newUser = await User.create({
       firstName,
       lastName,
       phoneNumber,
       password: hashedPassword,
+      pincode,
+      city,
       role
     });
     if (role === 'Admin') {
@@ -81,6 +84,7 @@ export const getUserProfile = async (req, res) => {
 
   try {
     const userId = req.user?.id;
+    console.log(userId)
     if (!userId) {
       return res.status(401).json({ message: 'Unauthorized: No user ID' });
     }
@@ -93,6 +97,8 @@ export const getUserProfile = async (req, res) => {
     res.status(200).json({
       firstName: user.firstName,
       lastName: user.lastName,
+      pincode: user.pincode,
+      city: user.city
     });
   } catch (error) {
     console.error('Error fetching user profile:', error);

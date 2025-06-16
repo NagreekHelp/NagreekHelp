@@ -1,0 +1,82 @@
+[
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1001" },
+    "firstName": "Niharika",
+    "lastName": "Sharma",
+    "phoneNumber": 9876543210,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "110001",
+    "city": "New Delhi"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1002" },
+    "firstName": "Rahul",
+    "lastName": "Mehta",
+    "phoneNumber": 9876543211,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "400001",
+    "city": "Mumbai"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1003" },
+    "firstName": "Sneha",
+    "lastName": "Verma",
+    "phoneNumber": 9876543212,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "700001",
+    "city": "Kolkata"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1004" },
+    "firstName": "Aman",
+    "lastName": "Gupta",
+    "phoneNumber": 9876543213,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "560001",
+    "city": "Bengaluru"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1005" },
+    "firstName": "Priya",
+    "lastName": "Singh",
+    "phoneNumber": 9876543214,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "600001",
+    "city": "Chennai"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1006" },
+    "firstName": "Vikas",
+    "lastName": "Jain",
+    "phoneNumber": 9876543215,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "380001",
+    "city": "Ahmedabad"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1007" },
+    "firstName": "Anjali",
+    "lastName": "Patel",
+    "phoneNumber": 9876543216,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "User",
+    "pincode": "500001",
+    "city": "Hyderabad"
+  },
+  {
+    "_id": { "$oid": "664f3c93c2d9e3d1f46b1008" },
+    "firstName": "Karan",
+    "lastName": "Kapoor",
+    "phoneNumber": 9876543217,
+    "password": "$2b$10$WUSbxiC38..ZrSSshafu4.03Pamusm1sKjQQtrH6.PIRg/gLUs2qm",
+    "role": "Admin",
+    "pincode": "302001",
+    "city": "Jaipur"
+  }
+]

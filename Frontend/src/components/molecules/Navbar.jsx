@@ -34,6 +34,7 @@ const NavBar = () => {
   // Use redux state
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const user = useSelector((state) => state.auth.user);
+  console.log(user)
   // Load profile data based on user role
   useEffect(() => {
   if (!user || !token || profile) return; // prevent re-fetch if profile already exists
@@ -45,6 +46,8 @@ const NavBar = () => {
       const userResponse = await profileApi.getUserProfile(token);
       if (userResponse?.data) {
         dispatch(setUserProfile(userResponse.data));
+        console.log(userResponse.data)
+        console.log('profile', profile)
       
       }
     } catch (error) {
@@ -70,16 +73,16 @@ const NavBar = () => {
     switch (user.role) {
       case 'Admin':
         return [
-          { name: 'Home', path: '/' },
-          { name: 'Requests', path: '/requests' },
+          { name: 'Home', path: '/adminHome' },
+          { name: 'Pending Requests', path: '/pendingrequest' },
+          { name: 'History', path: '/prevRequest' },
           { name: 'Help', path: '/help' },
         ];
       case 'User':
       default:
         return [
-          { name: 'Home', path: '/' },
-          { name: 'Make Request', path: '/make-req' },
-          { name: 'Previous Requests', path: '/prev-req' },
+          { name: 'Home', path: '/userHome' },
+          { name: 'Previous Requests', path: '/prevRequest' },
           { name: 'Help', path: '/help' },
         ];
     }
@@ -103,10 +106,10 @@ const NavBar = () => {
     if (isLoggedIn && user) {
       switch (user.role) {
         case 'Admin':
-          navigate('/');
+          navigate('/adminHome');
           break;
         case 'User':
-          navigate('/');
+          navigate('/userHome');
           break;
         default:
           navigate('/');
@@ -118,7 +121,7 @@ const NavBar = () => {
 
   // Prepare display name with fallback
   const displayName = useMemo(() => {
-  if (profile?.firstName || profile?.lastName) {
+  if (profile?.firstName || profile?.lastName ) {
     
     return `${profile.firstName} `;
   }
@@ -159,6 +162,8 @@ const NavBar = () => {
             <ProfileDropdown 
               name={`${displayName} ${user.role ? `(${user.role})` : ''}`} 
               phoneNumber={user.phoneNumber} 
+              city = {profile?.city || 'N/A'}
+              pincode ={profile?.pincode || 'N/A'}
               onLogout={handleLogout} 
             /> 
           </>
