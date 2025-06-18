@@ -8,6 +8,7 @@ import Layout from './components/atoms/Layout.jsx';
 import PrevRequest from './components/pages/PrevRequest.jsx';
 import PendingRequest from './components/pages/PendingRequest.jsx';
 import Help from './components/pages/Help.jsx';
+import History from './components/pages/History.jsx';
 function App() {
   return (
     <>
@@ -18,6 +19,8 @@ function App() {
         <Route path= '/register' element = {<RegistrationPage/>}/>
         <Route path= '/userHome' element = {<UserHome/>}/>
         <Route path= '/adminHome' element = {<AdminHome/>}/>
+        <Route path= '/history' element = {<History/>}/>
+
         <Route path='/prevrequest' element ={<PrevRequest/>}/>
         <Route path='/pendingrequest' element ={<PendingRequest/>}/>
         <Route path='/help' element ={<Help/>}/>

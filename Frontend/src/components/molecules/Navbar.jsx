@@ -75,7 +75,7 @@ const NavBar = () => {
         return [
           { name: 'Home', path: '/adminHome' },
           { name: 'Pending Requests', path: '/pendingrequest' },
-          { name: 'History', path: '/prevRequest' },
+          { name: 'History', path: '/history' },
           { name: 'Help', path: '/help' },
         ];
       case 'User':
@@ -83,7 +83,7 @@ const NavBar = () => {
         return [
           { name: 'Home', path: '/userHome' },
           { name: 'Previous Requests', path: '/prevRequest' },
-          { name: 'Help', path: '/help' },
+          { name: 'Help', path: '/h  elp' },
         ];
     }
   };

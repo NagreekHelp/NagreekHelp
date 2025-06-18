@@ -41,7 +41,7 @@ function PrevRequest() {
       <h2 className="text-2xl font-semibold text-center mb-6">Your Previous Requests</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {mockPrevRequests.map((req) => (
+        {requests.map((req) => (
           <AcceptedRequestCard
             key={req.id}
             documentName={req.documentName}

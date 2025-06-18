@@ -113,6 +113,9 @@ export const AcceptedRequestCard = ({
       onClose={() => setIsChatOpen(false)}
       centerName={centerName}
       requiredDocuments={requiredDocuments}
+   
+      currentUserId="665f3d7bc2d9e3d1f46b1001"
+      receiverId="665f3ddfc2d9e3d1f46b1008"
     />
   </div>
 );

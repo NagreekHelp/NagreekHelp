@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import { AdminRequestCard } from '../atoms/AdminRequestedCard';
-function PendingRequest() {
+function History() {
     const [requests, setRequests] = useState([]);
     useEffect(() => {
   const fetchRequests = async () => {
     const token = localStorage.getItem('token');
-    const res = await fetch('http://localhost:5050/req/byAdmin/middlereq', {
+    const res = await fetch('http://localhost:5050/req/byAdmin/finished', {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -60,4 +60,4 @@ function PendingRequest() {
   );
 }
 
-export default PendingRequest;
+export default History;
